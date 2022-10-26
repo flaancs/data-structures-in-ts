@@ -6,6 +6,10 @@ export class ListNode {
         this.val = val;
     }
 
+    /**
+     * Links the next node to the current node
+     * @param next: ListNode
+     */
     addNext(next: ListNode) {
         this.next = next;
     }

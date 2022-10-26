@@ -7,7 +7,11 @@ export class LinkedList {
         this.head = head
     }
 
-    getSize() {
+    /**
+     * Returns the LinkedList size
+     * @returns number
+     */
+    getSize(): number {
         let count = 0;
         let node = this.head;
 
@@ -19,7 +23,11 @@ export class LinkedList {
         return count;
     }
 
-    getLast() {
+    /**
+     * Returns the last node of the list
+     * @returns ListNode
+     */
+    getLast(): ListNode {
         let lastNode = this.head;
         if (lastNode) {
             while (lastNode.next) {
@@ -29,10 +37,17 @@ export class LinkedList {
         return lastNode;
     }
 
+    /** 
+     * Returns the first node of the list
+     * @returns ListNode
+     */
     getFirst() {
         return this.head;
     }
 
+    /**
+     * Remove all nodes from list
+     */
     clear() {
         this.head = null;
     }
