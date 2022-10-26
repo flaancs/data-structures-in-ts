@@ -1,13 +1,13 @@
-import { ListNode } from "./ListNode";
+import { ListNode } from "../ListNode";
 
 describe('ListNode', () => {
-    test('Create ListNode', () => {
+    it('Should create a new ListNode', () => {
         const listNode = new ListNode(10);
 
         expect(listNode.val).toBe(10);
     });
 
-    test('Add next node using addNext()', () => {
+    it('Should link the next node', () => {
         const node1 = new ListNode(10);
         const node2 = new ListNode(20);
 

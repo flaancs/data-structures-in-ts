@@ -1,8 +1,8 @@
-import { ListNode } from './ListNode';
-import { LinkedList } from './LinkedList';
+import { ListNode } from '../ListNode';
+import { LinkedList } from '../LinkedList';
 
 describe('LinkedList', () => {
-    test('Create a LinkedList with 3 nodes', () => {
+    it('Should create a LinkedList with 3 nodes', () => {
         const node1 = new ListNode('value');
         const node2 = new ListNode('other value');
         const node3 = new ListNode('some other value');
@@ -17,7 +17,7 @@ describe('LinkedList', () => {
         expect(linkedList.head.next.next.next).toBe(null);
     });
 
-    test('getSize() with a list of 5 nodes', () => {
+    it('Should return the size of a LinkedList with 5 nodes', () => {
         const node1 = new ListNode(1);
         const node2 = new ListNode(2);
         const node3 = new ListNode(3);
@@ -33,7 +33,7 @@ describe('LinkedList', () => {
         expect(linkedList.getSize()).toBe(5);
     });
 
-    test('getLast() with a list of 3 nodes', () => {
+    it('Should return the last node of a LinkedList of 3 nodes', () => {
         const node1 = new ListNode(1);
         const node2 = new ListNode(2);
         const node3 = new ListNode(3);
@@ -45,7 +45,7 @@ describe('LinkedList', () => {
         expect(linkedList.getLast()).toBe(node3);
     });
 
-    test('getFirst() with a list of 3 nodes', () => {
+    it('Should return the first node of a LinkedList of 3 nodes', () => {
         const node1 = new ListNode(1);
         const node2 = new ListNode(2);
         const node3 = new ListNode(3);
@@ -57,7 +57,7 @@ describe('LinkedList', () => {
         expect(linkedList.getFirst()).toBe(node1);
     });
 
-    test('clear() with a list of 2 nodes', () => {
+    it('Should remove all nodes from the LinkedList', () => {
         const node1 = new ListNode(1);
         const node2 = new ListNode(2);
 
