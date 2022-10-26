@@ -7,5 +7,5 @@
 ## Useful commands
 ```
 yarn run test
--- Run tests suite
+-- Run test suite
 ```
