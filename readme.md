@@ -8,6 +8,11 @@
 
 ## Useful commands
 ```
-yarn run test
+yarn test
 -- Run test suite
+```
+
+```
+yarn test:watch
+-- Run test suite in watch mode
 ```
