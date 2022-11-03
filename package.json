@@ -4,7 +4,8 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "license": "ISC",
   "devDependencies": {
