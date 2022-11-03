@@ -55,7 +55,7 @@ export class CustomArray<T> {
      */
     remove(index: number): T {
         const item = this.data[index];
-        this._shiftIndex(index);
+        this.shiftIndex(index);
         delete this.data[this.length - 1];
         this.length--;
         return item;
@@ -68,7 +68,7 @@ export class CustomArray<T> {
     shift(): T {
         if (this.length === 0) return undefined;
         const firstItem = this.data[0];
-        this._shiftIndex(0);
+        this.shiftIndex(0);
         delete this.data[this.length];
         this.length--;
         return firstItem;
@@ -90,10 +90,10 @@ export class CustomArray<T> {
             return this.length;
         }
 
-        this._unshiftIndex(element);
+        this.unshiftIndex(element);
         this.data[0] = element;
         this.length++;
-        
+
         return this.length;
     }
 
@@ -110,7 +110,7 @@ export class CustomArray<T> {
      * @private
      * @param index number
      */
-     _shiftIndex(index: number) {
+     private shiftIndex(index: number) {
         for (let i = index; i < this.length - 1; i++) {
             this.data[i] = this.data[i + 1];
         }
@@ -121,7 +121,7 @@ export class CustomArray<T> {
      * @private
      * @param element T
      */
-    _unshiftIndex(element: T) {
+    private unshiftIndex(element: T) {
         for (let i = this.length; i > 0; i--) {
             this.data[i] = this.data[i - 1];
         }
