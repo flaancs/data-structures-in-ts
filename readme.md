@@ -3,6 +3,7 @@
 
 ## Data structures so far:
 * Array
+* HashTable
 * LinkedList
 * Stack
 
