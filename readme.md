@@ -4,7 +4,7 @@
 ## Data structures so far:
 * Array
 * HashTable
-* LinkedList
+* Singly LinkedList
 * Stack
 
 ## Useful commands
