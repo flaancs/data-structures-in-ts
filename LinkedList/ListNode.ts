@@ -1,16 +1,9 @@
 export class ListNode {
-    val: any = null;
-    next: ListNode | null = null;
+    value: any;
+    next: any;
 
-    constructor(val: any) {
-        this.val = val;
-    }
-
-    /**
-     * Links the next node to the current node
-     * @param next: ListNode
-     */
-    addNext(next: ListNode) {
-        this.next = next;
+    constructor(value: any) {
+        this.value = value;
+        this.next = null;
     }
 }
