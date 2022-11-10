@@ -1,2 +1,2 @@
 export { ListNode } from "./ListNode";
-export { LinkedList } from "./LinkedList";
+export { SinglyLinkedList } from "./SinglyLinkedList";
