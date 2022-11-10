@@ -7,6 +7,17 @@
 * Singly LinkedList
 * Stack
 
+
+## Tests results
+```
+Test Suites: 4 passed, 4 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        2.92 s, estimated 4 s
+Ran all test suites.
+✨  Done in 4.60s.
+```
+
 ## Useful commands
 ```
 yarn test
