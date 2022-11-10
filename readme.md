@@ -21,10 +21,10 @@ Ran all test suites.
 ## Useful commands
 ```
 yarn test
--- Run test suite
+-- Run test suites
 ```
 
 ```
 yarn test:watch
--- Run test suite in watch mode
+-- Run test suites in watch mode
 ```
