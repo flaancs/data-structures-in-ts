@@ -12,13 +12,9 @@ describe('SinglyLinkedList', () => {
         list.append("Tuesday");
         list.append("Wednesday");
 
-        const expectedTail = {
-            value: "Wednesday",
-            next: null
-        }
-
         expect(list.getSize()).toEqual(3);
-        expect(list.getTail()).toEqual(expectedTail);
+        expect(list.getTail().value).toEqual("Wednesday");
+        expect(list.getTail().next).toBeNull();
     });
 
     it('Should add a new node to the beginning of the list', () => {
@@ -32,15 +28,11 @@ describe('SinglyLinkedList', () => {
         expect(list.getSize()).toEqual(4);
         expect(currentHead.value).toEqual("First");
 
-        const expectedHead = {
-            value: "Zero",
-            next: currentHead
-        }
-
         list.prepend("Zero");
 
         expect(list.getSize()).toEqual(5);
-        expect(list.getHead()).toEqual(expectedHead);
+        expect(list.getHead().value).toEqual("Zero");
+        expect(list.getHead().next).toEqual(currentHead);
     });
 
     it('Should insert a node in a specific index', () => {
@@ -53,16 +45,9 @@ describe('SinglyLinkedList', () => {
 
         list.insert(3, "Fourth");
 
-        const expectedNode = {
-            value: "Fourth",
-            next: {
-                value: "Fifth",
-                next: null
-            }
-        }
-
         expect(list.getSize()).toEqual(5);
-        expect(list.getIndex(3)).toEqual(expectedNode);
+        expect(list.getIndex(3).value).toEqual("Fourth");
+        expect(list.getIndex(3).next.value).toEqual("Fifth");
     });
 
     it('Should remove a node from a specific index', () => {
@@ -95,15 +80,8 @@ describe('SinglyLinkedList', () => {
         list.append("Third"); // Selected Node (Index 2)
         list.append("Fourth");
 
-        const expectedNode = {
-            value: "Third",
-            next: {
-                value: "Fourth",
-                next: null
-            }
-        }
-
-        expect(list.getIndex(2)).toEqual(expectedNode);
+        expect(list.getIndex(2).value).toEqual("Third");
+        expect(list.getIndex(2).next.value).toEqual("Fourth");
     });
 
     it('Should return the list size', () => {
