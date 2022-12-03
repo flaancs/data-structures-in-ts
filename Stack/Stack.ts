@@ -1,48 +1,59 @@
-export class Stack {
-    data: any[];
+import { StackNode } from "./StackNode";
+
+export class Stack<T> { 
+    top: StackNode<T> | null; bottom: StackNode<T> | null; size: number;
 
     constructor() {
-        this.data = [];
-    }
-
-    /** 
-    * Add a new item to the Stack
-    * @param value: any
-    */
-    push(value: any) {
-        this.data.push(value);
+        this.top = null;
+        this.bottom = null;
+        this.size = 0;
     }
 
     /**
-     * Remove the last item fron the stack and returns it
-     * @returns any
+     * Add a new item to the top of the stack
+     * @param value T
+     * @returns Stack<T>
+     */
+    push(value: T) {
+        const node = new StackNode(value);
+
+        if (!this.size) {
+            this.top = node;
+            this.bottom = node;
+        } else {
+            const holdingPointer = this.top;
+            this.top = node;
+            this.top.next = holdingPointer;
+        }
+
+        this.size++;
+
+        return this;
+    }
+
+    /**
+     * Returns the last item on the stack.
+     * @returns StackNode<T>
+     */
+    peek() {
+        return this.top;
+    }
+
+    /**
+     * Remove the last item from the stack
+     * @returns StackNode<T>
      */
     pop() {
-        if (this.isEmpty()) return null;
-        return this.data.pop();
-    }
+        if (!this.size) {
+            return this;
+        } else if (this.size === 1) {
+            this.top = null;
+            this.bottom = null;
+        } else {
+            this.top = this.top.next;
+        }
 
-    /**
-     * Returns true if the stack is empty
-     * @returns boolean
-     */
-    isEmpty() {
-        return this.data.length === 0;
-    }
-
-    /**
-     * Returns a string representation of the stack
-     * @returns string
-     */
-    toString() {
-        return this.toArray().map(x => `${x}`).join(",");
-    }
-
-    /**
-     * Returns an array representation of a stack
-     * @returns any
-     */
-     toArray(): any[] {
-        return [...this.data].reverse();
+        this.size--;
+        return this;
     }
 }
