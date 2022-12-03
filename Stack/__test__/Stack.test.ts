@@ -3,62 +3,80 @@ import { Stack } from "../Stack";
 describe('Stack', () => {
     it('Should create an empty stack', () => {
         const stack = new Stack();
-        expect(stack.data).toStrictEqual([]);
-        expect(stack).not.toBeNull();
+        expect(stack.size).toEqual(0);
+        expect(stack.top).toBeNull();
+        expect(stack.bottom).toBeNull();
     });
 
-    it('Should add new items to the stack', () => {
-        const stack = new Stack();
+    it('Should add new elements to the stack', () => {
+        const stack = new Stack<number>();
+        const range = Array(5);
+
+        for (let i = 1; i <= range.length; i++) {
+            stack.push(i);
+        }
+
+        expect(stack.size).toEqual(5);
+        expect(stack.top.value).toEqual(5);
+        expect(stack.bottom.value).toEqual(1);
+    });
+
+    it('Should return the last item on the stack', () => {
+        const stack = new Stack<number>();
+        const range = Array(5);
+
+        for (let i = 1; i <= range.length; i++) {
+            stack.push(i);
+        }
+
+        const last = stack.peek();
+
+        expect(last.value).toEqual(5);
+    });
+
+    it('Should remove the last item from the stack', () => {
+        const stack = new Stack<number>();
+        const range = Array(5);
+
+        for (let i = 1; i <= range.length; i++) {
+            stack.push(i);
+        }
+
+        expect(stack.top.value).toEqual(5);
+        expect(stack.size).toEqual(5);
+
+        stack.pop();
+
+        expect(stack.top.value).toEqual(4);
+        expect(stack.size).toEqual(4);
+    });
+
+    it('Bottom and top should be cleared when deleting the last item in a stack of 1 items', () => {
+        const stack = new Stack<number>();
         stack.push(1);
-        stack.push(2);
-        stack.push(3);
 
-        expect(stack.data.length).toBe(3);
+        expect(stack.top.value).toEqual(1);
+        expect(stack.size).toEqual(1);
+
+        stack.pop();
+
+        expect(stack.top).toBeNull();
+        expect(stack.bottom).toBeNull();
+        expect(stack.size).toEqual(0);
     });
 
-    it('Should remove and return the last element from a non-empty stack', () => {
-        const stack = new Stack();
-        stack.push('Item');
-        stack.push('Deleted');
+    it('Should return the stack by removing the last item from an empty stack', () => {
+        const stack = new Stack<number>();
 
-        expect(stack.data.length).toBe(2);
+        expect(stack.top).toBeNull();
+        expect(stack.bottom).toBeNull();
+        expect(stack.size).toEqual(0);
 
-        const deleted = stack.pop();
+        const result = stack.pop();
 
-        expect(deleted).toBe('Deleted');
-        expect(stack.data.length).toBe(1);
-    });
-
-    it('Should return null when trying to remove the last element from an empty stack', () => {
-        const stack = new Stack();
-
-        const deleted = stack.pop();
-        expect(deleted).toBeNull();
-    });
-
-    it('Should return true/false depending on if the stack is empty or not', () => {
-        const emptyStack = new Stack();
-        const nonEmptyStack = new Stack();
-        nonEmptyStack.push('Item');
-        expect(emptyStack.isEmpty()).toBeTruthy();
-        expect(nonEmptyStack.isEmpty()).toBeFalsy();
-    });
-
-    it('Should return an string representation of a stack', () => {
-        const stack = new Stack();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-
-        expect(stack.toString()).toBe("3,2,1");
-    });
-
-    it('Should return an array representation of a stack', () => {
-        const stack = new Stack();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-
-        expect(stack.toArray()).toStrictEqual([3, 2, 1]);
+        expect(result).toEqual(stack);
+        expect(stack.top).toBeNull();
+        expect(stack.bottom).toBeNull();
+        expect(stack.size).toEqual(0);
     });
 })
