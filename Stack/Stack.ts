@@ -14,7 +14,7 @@ export class Stack<T> {
      * @param value T
      * @returns Stack<T>
      */
-    push(value: T) {
+    push(value: T): Stack<T> {
         const node = new StackNode(value);
 
         if (!this.size) {
@@ -35,7 +35,7 @@ export class Stack<T> {
      * Returns the last item on the stack.
      * @returns StackNode<T>
      */
-    peek() {
+    peek(): StackNode<T> {
         return this.top;
     }
 
@@ -43,7 +43,7 @@ export class Stack<T> {
      * Remove the last item from the stack
      * @returns StackNode<T>
      */
-    pop() {
+    pop(): Stack<T> {
         if (!this.size) {
             return this;
         } else if (this.size === 1) {
