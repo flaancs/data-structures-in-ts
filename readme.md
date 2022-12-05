@@ -7,14 +7,15 @@
 * Singly LinkedList
 * Doubly LinkedList
 * Stack
+* Queue
 
 
 ## Tests results
 ```
-Test Suites: 5 passed, 5 total
-Tests:       37 passed, 37 total
+Test Suites: 6 passed, 6 total
+Tests:       40 passed, 40 total
 Snapshots:   0 total
-Time:        3.125 s
+Time:        4.109 s
 Ran all test suites.
 ```
 
