@@ -8,15 +8,17 @@
 * Doubly LinkedList
 * Stack
 * Queue
+* Binaty Search Tree
 
 
 ## Tests results
 ```
-Test Suites: 6 passed, 6 total
-Tests:       40 passed, 40 total
+Test Suites: 7 passed, 7 total
+Tests:       45 passed, 45 total
 Snapshots:   0 total
-Time:        4.109 s
+Time:        3.854 s, estimated 4 s
 Ran all test suites.
+✨  Done in 5.42s.
 ```
 
 ## Useful commands
