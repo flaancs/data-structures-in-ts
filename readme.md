@@ -8,7 +8,7 @@
 * Doubly LinkedList
 * Stack
 * Queue
-* Binaty Search Tree
+* Binary Search Tree
 
 
 ## Tests results
